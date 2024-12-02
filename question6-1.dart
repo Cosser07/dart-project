@@ -1,12 +1,21 @@
-void main() {
-  Map<String, String> contacts = {
-    'Diw': '0653154897',
-    'Pop': '0987645615',
-    'Bob': '0856423125',
-    'Game': '0963153015',
-    'Yoyo': '0986325482'
-  };
+class Laptop {
+  String? id;
+  String? name;
+  String? ram;
 
-  var keysWithLength4 = contacts.keys.where((key) => key.length == 4).toList();
-  print('Keys with length 4: $keysWithLength4');
+  Laptop(String id, String name, String ram) {
+    this.id = id;
+    this.name = name;
+    this.ram = ram;
+  }
+
+  @override
+  String toString() {
+    return 'id: $id, name: $name, ram: $ram';
+  }
+}
+
+void main() {
+  Laptop thinkbook = Laptop('sn1234', 'Lenovo Thinkbook', '8GB');
+  print(thinkbook);
 }
